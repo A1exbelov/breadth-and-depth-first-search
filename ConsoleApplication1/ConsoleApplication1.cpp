@@ -42,8 +42,9 @@ void DFS(int start) {
 
         cout << v << " "; // посещаем вершину
 
-        // добавляем в стек все еще не посещенные соседние вершины
-        for (int u : adjList[v]) {
+        // добавляем в стек все еще не посещенные соседние вершины в обратном порядке
+        for (int i = adjList[v].size() - 1; i >= 0; i--) {
+            int u = adjList[v][i];
             if (!visited[u]) {
                 visited[u] = true;
                 s.push(u);
